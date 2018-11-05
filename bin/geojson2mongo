@@ -1,0 +1,6 @@
+if [ ! $1 ] || [ ! $2 ]; then
+  echo "input file or target collection are not defined"
+else
+  table=$(python3 bin/geojson2table.py $1)
+  echo $table | mongoimport --host 127.0.0.1:27017 -d mobility -c $2
+fi

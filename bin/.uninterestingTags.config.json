@@ -1,0 +1,11 @@
+{
+  "source": true,
+  "source_ref": true,
+  "source:ref": true,
+  "history": true,
+  "attribution": true,
+  "created_by": true,
+  "tiger:county": true,
+  "tiger:tlid": true,
+  "tiger:upload_uuid": true
+}

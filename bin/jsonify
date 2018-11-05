@@ -1,0 +1,8 @@
+# osmtogeojson -e -n -m $PWD/$1 > $PWD/geojson/$2
+if [[ ! $3 ]]; then
+  flatProperties=False
+else
+  flatProperties=True
+fi
+file_size=$(du -k results/highways30.xml | grep -o ^[0-9]*)
+node --max_old_space_size=$(($file_size*5)) bin/notgj.js $PWD/$1 $PWD/geojson/$2 $flatProperties

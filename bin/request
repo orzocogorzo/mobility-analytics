@@ -1,0 +1,7 @@
+
+context=$PWD
+endpoint="http://overpass-api.de/api/interpreter"
+query=@$context/$1
+resultDir=$context/results
+
+curl -o $resultDir/$2 -X POST -H "Content-Type: application/x-www-form-urlencoded" $endpoint -d $query

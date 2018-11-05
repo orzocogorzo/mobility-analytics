@@ -1,0 +1,8 @@
+if [ ! $1 ]; then
+  echo "file path not defined"
+else
+  file=$1
+  osm2pgrouting --schema network --addnodes --dbname mobility --username orzo \
+    --password Contrasenya1992_ --tags --chunk=2000 --conf /usr/local/share/osm2pgrouting/mapconfig.xml \
+    --file $file --clean
+fi

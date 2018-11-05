@@ -1,0 +1,8 @@
+if [ ! $1 ] || [ ! $2 ]; then
+  echo "not enough data, it lacks the input or the output file"
+else
+  SOURCE=$1
+  FILE=$2
+  osmconvert $SOURCE --drop-author --drop-version -\
+    -out-osm -o=$FILE
+fi

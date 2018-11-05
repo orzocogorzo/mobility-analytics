@@ -1,0 +1,4 @@
+results/*
+geojson/*
+node_modules
+extracts/*

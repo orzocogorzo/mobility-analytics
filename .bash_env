@@ -1,0 +1,7 @@
+if [[ ! $PATH =~ $PWD/bin ]]; then
+    PATH=$PATH:$PWD/bin
+fi
+
+if [[ ! $(command -v osmtogeojson) ]]; then
+    sudo npm install -g osmtogeojson
+fi
