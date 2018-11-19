@@ -1,0 +1,20 @@
+HIGHWAYS
+entities: 122227
+ways: 91059 (0.74)
+  oneway: 37971 (0.416)
+  sidewalk: 1038 (0.011)
+  foot: 5819 (0.063)
+  maxspeed: 11218 (0.123)
+  lanes: 12256 (0.134)
+
+RAILWAYS
+entities: 4249
+ways: 2915 (0.686)
+  operator: 841 (0.288)
+
+CYCLEWAYS
+entities: 2081
+ways: 1326 (0.637)
+  oneway: 641 (0.483)
+
+AMENITIES
