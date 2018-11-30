@@ -1,0 +1,17 @@
+{
+  "columns": [
+    "pedestrian",
+    "byclicle",
+    "pt",
+    "motor"
+  ],
+  "rows": [
+    "street_type"
+  ],
+  "data": [
+    {
+      "weight": 0.1,
+      "fn": "lambda doc, weight, mode_idx, criteria: criteria[doc['properties']['tags']['highway']][mode_idx]*weight if criteria[doc['properties']['tags']['highway']] else None"
+    }
+  ]
+}
