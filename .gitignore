@@ -2,3 +2,4 @@ results/*
 geojson/*
 node_modules
 extracts/*
+postgis/dump-*
