@@ -1,13 +1,15 @@
 import simplejson as json
 from pymongo import MongoClient
 
+from .table import table
+
 client = MongoClient()
 db = client.mobility
 
 criteria = json.load(open('criteria.json'))
-table = json.load(open('table.json'))
-for row in table["data"]:
-  row["fn"]=eval(dimension["fn"])
+# table = json.load(open('table.json'))
+# for row in table["data"]:
+#   row["fn"]=eval(row["fn"])
 
 data = [
   doc for doc in list(db.highways.find({}, {"_id": False})) 
@@ -17,13 +19,11 @@ data = [
 
 
 def classify():
-
-
   for doc in data:
     doc["modes"] = doc.get("modes", dict())
-    mode_idx = 0
-    for mode_name in table["columns"]:
+    for mode_idx in range(len(table["columns"])):
       mode_value = 0
+      mode_name = table["columns"][mode_idx]
       for row_idx in range(len(table["rows"])):   
         dimension = table["data"][row_idx]
         dimension_name = table["rows"][row_idx]
@@ -34,6 +34,8 @@ def classify():
           mode_value += dim_value
         
       doc["modes"][mode_name] = mode_value
-      mode_idx += 1
       
     print(doc["modes"])
+
+if __name__ == '__main__':
+  classify()
