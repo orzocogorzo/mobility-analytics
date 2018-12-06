@@ -3,3 +3,5 @@ geojson/*
 node_modules
 extracts/*
 postgis/dump-*
+*.py[cod]
+.idea
