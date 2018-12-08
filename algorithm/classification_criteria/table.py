@@ -71,7 +71,19 @@ table = {
     ],
     "rows": [
         "street_type",
-        "slope"
+        "slope",
+        "length",
+        "maxspeed",
+        "bike_lane",
+        "pt",
+        "bike_parking",
+        "motor_parking",
+        "land_use",
+        "lanes",
+        "vegetation",
+        "local_facilities",
+        "public_space"
+
     ],
     "data": [
         {

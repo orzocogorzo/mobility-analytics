@@ -1,7 +1,7 @@
 import simplejson as json
 from pymongo import MongoClient
 
-from .table import table
+from .table import table # .?¿
 
 client = MongoClient()
 db = client.mobility
@@ -12,7 +12,7 @@ criteria = json.load(open('criteria.json'))
 #   row["fn"]=eval(row["fn"])
 
 data = [
-  doc for doc in list(db.highways.find({}, {"_id": False})) 
+  doc for doc in list(db.highways.find({}, {"_id": False})) #_id entre comes?
   if (doc["geometry"]["type"] == "LineString" or doc["geometry"]["type"] == "MultiLineString")
   and doc["properties"]["tags"].get("highway", None)
 ]
