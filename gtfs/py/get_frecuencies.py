@@ -21,7 +21,7 @@ for folder in os.listdir('.'):
             route_types = dict()
             for route in routes[1:]:
                 trips_map[route[0]] = dict()
-                route_types[route[0]] = route[4]
+                route_types[route[0]] = route[3]
 
             for trip in trips[1:]:
                 trips_map[trip[0]][trip[2]] = True
@@ -37,7 +37,7 @@ for folder in os.listdir('.'):
                 stop += [stop_route_id, stop_route_type]
                 stop[1] = str_to_time(stop[1])
 
-            open(os.path.join(cwd, folder, 'stop_times.txt'), 'w').write("\n".join([",".join(row) for row in stop_times]))
+            open(os.path.join(cwd, folder, 'stop_times.txt'), 'w').write("\n".join([",".join([str(d) for d in row]) for row in stop_times]))
             stops = dict()
             for stop in stop_times[1:]:
                 stops[stop[3]] = stops.get(stop[3], {})
