@@ -1,6 +1,7 @@
 overpassAPI/results/*
 overpassAPI/geojson/*
 gtfs/shp/*
+gtfs/py/__pycache__/*
 node_modules
 extracts/*
 postgis/dump-*
