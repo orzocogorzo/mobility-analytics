@@ -1,5 +1,6 @@
-results/*
-geojson/*
+overpassAPI/results/*
+overpassAPI/geojson/*
+gtfs/shp/*
 node_modules
 extracts/*
 postgis/dump-*

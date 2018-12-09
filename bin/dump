@@ -5,10 +5,10 @@ PASSWORD=Contrasenya1992_
 PORT=5432
 
 if [ ! $2 ]; then
-  echo "layer name not defined"
+  echo "layer name is not defined"
 else
   LAYER=$2
   ogr2ogr -f PostgreSQL PG:"user=$USER dbname=$DB password=$PASSWORD" -nlt LINESTRING -nln $LAYER \
-    -s_srs "EPSG:3857" -t_srs "EPSG:25831" -progress -overwrite -lco OVERWRITE=yes \
+    -s_srs "EPSG:4326" -t_srs "EPSG:25831" -progress -overwrite -lco OVERWRITE=yes \
     -lco SCHEMA=public $1
 fi
