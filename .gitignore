@@ -1,5 +1,7 @@
 overpassAPI/results/*
+!overpassAPI/results/.void
 overpassAPI/geojson/*
+!overpassAPI/geojson/.void
 gtfs/shp/*
 !gtfs/shp/.void
 gtfs/py/__pycache__/*
@@ -8,3 +10,4 @@ extracts/*
 postgis/dump-*
 *.py[cod]
 .idea
+.venv
