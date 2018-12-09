@@ -4,8 +4,8 @@ import requests as req
 
 class ShpGenerator():
 
-  def __init__( self, filepath, shapeType=3 ):
-    self.fields_spec =   {
+  def __init__(self, filepath, shapeType=3):
+    self.fields_spec = {
       "shape_id": {
         "type": "C",
         "size": "255"
@@ -37,19 +37,19 @@ class ShpGenerator():
     }
     
     self.filepath = filepath
-    self.w = shp.Writer(shapeType)
+    self.w = shp.Writer(filepath, shapeType=shapeType)
     self.w.autoBalance = 1
     self.proj = self.getWKT_PRJ(4326)
   
-  def getWKT_PRJ ( self, epsg_code ):
+  def getWKT_PRJ(self, epsg_code):
     wkt = req.get("http://spatialreference.org/ref/epsg/{0}/prettywkt/".format(epsg_code))
-    remove_spaces = wkt.text.replace(" ","")
+    remove_spaces = wkt.text.replace(" ", "")
     output = remove_spaces.replace("\n", "")
     
     return output
   
   
-  def setup_layer_fields( self, fields ):
+  def setup_layer_fields(self, fields):
     self.headers = fields
     for field in fields:
       self.w.field(field, "C")
@@ -59,13 +59,12 @@ class ShpGenerator():
       #   self.w.field(field, self.fields_spec[field]["type"], decimal=self.fields_spec[field]["decimal"])   
       
          
-  def write_row( self, values ):
+  def write_row(self, values):
     values = self.format_values(values)
     self.w.point(float(values[self.headers.index("shape_pt_lon")]),float(values[self.headers.index("shape_pt_lat")]))
     self.w.record(*tuple(values))
-    
-    
-  def draw_shape( self, values, headers ):  
+
+  def draw_shape(self, values, headers):
     lineCoords = []
     for d in values:
       lineCoords.append([
@@ -73,17 +72,17 @@ class ShpGenerator():
         float(d[headers.index("shape_pt_lat")])
       ])
       
-    self.w.line(parts=[lineCoords])
+    self.w.line([lineCoords])
     self.w.record(d[headers.index("shape_id")])
     
     
   def close( self ):
-    self.w.save(self.filepath)
+    # self.w.save(self.filepath)
     
-    proj = open(self.filepath + '.prj','w')
+    proj = open(self.filepath + '.prj', 'w')
     proj.write(self.proj)
     proj.close()
-    print( "generated: ", self.filepath + '.shp' )
+    print("generated: ", self.filepath + '.shp')
     
   
   def format_values( self, values ):
@@ -91,7 +90,7 @@ class ShpGenerator():
     return list(map(lambda i: self.values_spec[self.headers[i]](dictValues[i]), dictValues))
     
 
-def sort_data( data, headers ):
+def sort_data(data, headers):
   sortedata = dict()
   for d in data:
     if len(d):
@@ -119,13 +118,12 @@ for folder in os.listdir(cwd):
         writer = ShpGenerator(os.path.join(os.getcwd(), 'shp', folder), shapeType=1)
         headers = next(reader)
         writer.setup_layer_fields(headers)
-        data = [ d for d in reader ]
+        data = [d for d in reader]
         for row in data:
           if len(row):
             writer.write_row(row)
         
-        if len(writer.w.records):
-          writer.close()
+        writer.close()
           
 
 # write as line layer by shape_id
@@ -133,13 +131,12 @@ for folder in os.listdir(cwd):
   if 'gtfs' in folder:
     for file in os.listdir(os.path.join(cwd,folder)):
       if 'shape' in file:
-        reader = csv.reader( open( os.path.join(cwd,folder,file), encoding='Latin1' ), delimiter=',')
+        reader = csv.reader( open( os.path.join(cwd, folder, file), encoding='Latin1'), delimiter=',')
         headers = next(reader)
-        data = sort_data( [ d for d in reader], headers )
+        data = sort_data([d for d in reader], headers)
         writer = ShpGenerator(os.path.join(os.getcwd(), 'shp', folder + '-lines'), shapeType=3)
         writer.setup_layer_fields(["name"])
         for shape in data.keys():
           writer.draw_shape(data[shape], headers)
-                    
-        if len(writer.w.records):
-          writer.close()
+
+        writer.close()
