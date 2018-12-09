@@ -1,0 +1,24 @@
+route_id,route_short_name,route_long_name,route_type,route_url,route_color,route_text_color
+Escolar,ES,Pl. Catalunya - Sant Joan,2,http://www.fgc.cat/cat/barcelona-valles.asp,5A5858,FFFFFF
+L6,L6,Barcelona Pl. Catalunya - Sarrià,1,http://www.fgc.cat/cat/barcelona-valles.asp?linia=L6,797FBC,FFFFFF
+L12,L12,Sarrià - Reina Elisenda,1,http://fgc.cat/cat/barcelona-valles.asp?linia=L12,b2aed3,FFFFFF
+L7,L7,Barcelona Pl. Catalunya - Av Tibidabo,1,http://www.fgc.cat/cat/barcelona-valles.asp?linia=L7,B2600B,FFFFFF
+S1,S1,Barcelona Pl. Catalunya - Terrassa Nacions Unides,2,http://www.fgc.cat/cat/barcelona-valles.asp?linia=S1,EF7900,FFFFFF
+S2,S2,Barcelona Pl. Catalunya - Sabadell Parc del Nord,2,http://www.fgc.cat/cat/barcelona-valles.asp?linia=S2,88BB0B,FFFFFF
+S5,S5,Barcelona Pl. Catalunya - Sant Cugat,2,http://www.fgc.cat/cat/barcelona-valles.asp?linia=S5,5B8FCB,FFFFFF
+S6,S6,Barcelona Pl. Catalunya - U. Autónoma,2,http://www.fgc.cat/cat/barcelona-valles.asp?linia=S55,E40046,FFFFFF
+S7,S7,Barcelona Pl. Catalunya - Rubí,2,http://www.fgc.cat,9B2743,FFFFFF
+L8,L8,Barcelona Pl. Espanya - Molí Nou,1,http://www.fgc.cat/cat/llobregat-anoia.asp?linia=L8,E274AA,FFFFFF
+S3,S3,Barcelona Pl. Espanya - Can Ros,2,http://www.fgc.cat/cat/llobregat-anoia.asp?linia=S33,4F868E,FFFFFF
+S4,S4,Barcelona Pl. Espanya - Olesa de Montserrat,2,http://www.fgc.cat/cat/llobregat-anoia.asp?linia=S4,A78600,FFFFFF
+S8,S8,Barcelona Pl. Espanya - Martorell Enllaç,2,http://www.fgc.cat/cat/llobregat-anoia.asp?linia=S8,49C0DE,FFFFFF
+S9,S9,Barcelona Pl. Espanya - Quatre Camins,2,http://www.fgc.cat,DF4661,FFFFFF
+R5,R5,Barcelona Pl. Espanya - Manresa,2,http://www.fgc.cat/cat/llobregat-anoia.asp?linia=R5,3dbfc3,FFFFFF
+R50,R50,Barcelona Pl. Espanya- Manresa,2,http://fgc.cat/cat/llobregat-anoia.asp?linia=R50,00738a,FFFFFF
+R6,R6,Barcelona Pl. Espanya - Igualada,2,http://www.fgc.cat/cat/llobregat-anoia.asp?linia=R6,b3b3b3,FFFFFF
+R60,R60,Barcelona Pl. Espanya - Igualada,2,http://fgc.cat/cat/llobregat-anoia.asp?linia=R60,5b5b5b,FFFFFF
+FV,FV,Funicular de Vallvidrera,7,http://www.fgc.cat/cat/barcelona-valles.asp,0A57A3,FFFFFF
+MM,MM,Monistrol de Montserrat - Montserrat,7,http://www.fgc.cat/cat/llobregat-anoia.asp,000000,FFFFFF
+16,LP,Lleida-Pirineus - La Pobla de Segur,2,http://www.fgc.cat/cat/lleida-lapobla.asp,FF8000,FFFFFF
+17,RL1,Lleida-Pirineus - Balaguer,2,http://www.fgc.cat/cat/lleida-lapobla.asp,5F8625,FFFFFF
+18,RL2,Lleida-Pirineus - La Pobla de Segur,2,http://www.fgc.cat/cat/lleida-lapobla.asp,75B22A,FFFFFF
