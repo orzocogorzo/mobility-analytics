@@ -11,3 +11,4 @@ postgis/dump-*
 *.py[cod]
 .idea
 .venv
+.vscode
