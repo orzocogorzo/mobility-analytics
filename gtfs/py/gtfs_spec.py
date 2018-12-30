@@ -1,3 +1,13 @@
+# route types
+# 0: tranvía, metro ligero.
+# 1: subterráneo, metro.
+# 2: tren.
+# 3: autobús.
+# 4: transbordador, ferry.
+# 5: funicular.
+# 6: cabina, vehículo suspendido por un cable.
+# 7: funicular.
+
 gtfs_spec = {
   "agency": {
     "agency_id": "varchar",
@@ -52,6 +62,9 @@ gtfs_spec = {
   },
   "frequencies": {
     "trip_id": "varchar",
+    "stop_id": "varchar",
+    "route_id": "varchar",
+    "avg_time": "float",
     "start_time": "time",
     "end_time": "time",
     "headway_secs": "bigint",
