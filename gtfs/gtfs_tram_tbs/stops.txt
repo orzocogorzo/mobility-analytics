@@ -1,4 +1,4 @@
-﻿stop_id,stop_name,stop_desc,stop_lat,stop_lon,stop_url
+stop_id,stop_name,stop_desc,stop_lat,stop_lon,stop_url
 20,Ciutadella | Vila Olímpica,Correspondència amb Metro L4,41.387614,2.191922,http://www.tram.cat/linies-i-horaris/linea-t4/
 21,Wellington,,41.390167,2.188483,http://www.tram.cat/linies-i-horaris/linea-t4/
 22,Marina,Correspondència amb Metro L1,41.394061,2.186917,http://www.tram.cat/linies-i-horaris/linea-t4/
