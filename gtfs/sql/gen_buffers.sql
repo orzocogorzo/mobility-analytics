@@ -71,7 +71,8 @@ CREATE TABLE gtfs.stops AS (
       'gencat' as service_name
     FROM
       gtfs_gencat.stops
-  );
+
+);
 
 ALTER TABLE gtfs.stops
 ADD COLUMN geom geometry(Point, 4326),
@@ -86,49 +87,57 @@ SET stop_type = stop_times.route_type
 FROM (
   SELECT
       stop_id,
-      route_type
+      route_type,
+      service_name
     FROM
       gtfs_2acor.stop_times
   UNION
     SELECT
       stop_id,
-      route_type
+      route_type,
+      service_name
     FROM
       gtfs_amb.stop_times
   UNION
     SELECT
       stop_id,
-      route_type
+      route_type,
+      service_name
     FROM
       gtfs_tmb.stop_times
   UNION
     SELECT
       stop_id,
-      route_type
+      route_type,
+      service_name
     FROM
       gtfs_fgc.stop_times
   UNION
     SELECT
       stop_id,
-      route_type
+      route_type,
+      service_name
     FROM
       gtfs_tram_tbs.stop_times
   UNION
     SELECT
       stop_id,
-      route_type
+      route_type,
+      service_name
     FROM
       gtfs_tram_tbx.stop_times
   UNION
     SELECT
       stop_id,
-      route_type
+      route_type,
+      service_name
     FROM
       gtfs_renfe.stop_times
   UNION
     SELECT
       stop_id,
-      route_type
+      route_type,
+      service_name
     FROM
       gtfs_gencat.stop_times
   ) as stop_times
